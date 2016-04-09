@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  .home-page-wrapper
+    img(src="/img/logo.jpg", alt="Толковый словарь").home-page-logo
+    h1 Толковый словарь
+    form#main-page-search
+      .form-group
+        input(type="text", class="form-control input-search")
+        button(class="btn btn-primary btn-icon ion-ios-search")
