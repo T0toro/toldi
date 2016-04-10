@@ -27,41 +27,25 @@ Word     = mongoose.model('Word');
 
 
 /**
-  * Find all words
-  */
-exports.all = function(req, res) {
-  Word
-    .find()
-    .limit(5)
-    .exec(function(err, words) {
-      if(err) return next(err);
-
-      res.json({
-        words: words
-      });
-    });
-}
-
-/**
-  * Find all words
+  * Find word by name
   */
 exports.find = function(req, res) {
-  var word = req.params.word || '';
+  var word = req.params.word || false;
 
-  console.info(word);
+  if (word) {
+    Word
+      .find({
+        name: {
+          "$regex": word,
+          "$options": "i"
+        }
+      })
+      .exec(function(err, word) {
+        if(err) return next(err);
 
-  Word
-    .find({
-      name: {
-        "$regex": word,
-        "$options": "i"
-      }
-    })
-    .exec(function(err, word) {
-      if(err) return next(err);
-
-      res.json({
-        word: word
+        res.json({
+          word: word
+        });
       });
-    });
+  }
 }

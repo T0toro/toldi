@@ -17,6 +17,5 @@ words = require('../app/controllers/words');
 
 module.exports = function(app) {
   app.get('/', home.index);
-  app.get('/words', words.all);
   app.get('/search/:word', words.find);
 }
