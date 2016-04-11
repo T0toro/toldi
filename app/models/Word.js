@@ -13,7 +13,6 @@
 
 var mongoose, Schema, WordSchema;
 
-
 /**
  * Module dependencies
  */

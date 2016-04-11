@@ -11,7 +11,7 @@
  * Module variables
  */
 
-var mongoose, Word, _;
+var mongoose, Word;
 
 /**
  * Module dependencies
@@ -19,7 +19,6 @@ var mongoose, Word, _;
 
 mongoose = require('mongoose');
 Word     = mongoose.model('Word');
-       _ = require('lodash');
 
 /**
  * Words request handler
