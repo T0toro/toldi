@@ -1,5 +1,5 @@
 requirejs.config({
-  baseUrl: 'js',
+  baseUrl: '/js',
   paths: {
     lodash:      'libs/lodash.min',
     jquery:      'libs/jquery.min',

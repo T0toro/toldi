@@ -20,15 +20,41 @@ var mongoose, Word;
 mongoose = require('mongoose');
 Word     = mongoose.model('Word');
 
-/**
- * Words request handler
- */
+// Words request handler
+//--------------------------------------------
 
 
 /**
-  * Find word by name
+  * Find word by slug
   */
-exports.find = function(req, res) {
+
+exports.show = function(req, res, next) {
+  var name = req.params.word || false;
+
+  if (name) {
+    Word
+      .find({
+        name: name
+      })
+      .exec(function(err, word) {
+        if(err) return next(err);
+
+
+        if(Array.isArray(word) && word.length > 0) {
+          return res.render('words/show',{
+            word: word[0]
+          });
+        } else {
+          return next(404);
+        }
+      });
+  }
+}
+
+/**
+  * Find words in a regex
+  */
+exports.find = function(req, res, next) {
   var word = req.params.word || false;
 
   if (word) {
