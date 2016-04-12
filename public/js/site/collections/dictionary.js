@@ -5,9 +5,13 @@
  * @description :: Represent collection of words
  */
 
-var app = app || {};
+define(['backbone'], function(Backbone) {
+  'use strict';
 
-app.Dictionary = Backbone.Collection.extend({
-    model: app.Word
+  var Dictionary = Backbone.Collection.extend({
+        model: app.Word
+      });
+
+  return Dictionary;
 });
 

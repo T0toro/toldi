@@ -5,12 +5,16 @@
  * @description :: Represent word schema model in DB
  */
 
-var app = app || {};
+define(['backbone'], function(Backbone) {
+  'use strict';
 
-app.Word = Backbone.Model.extend({
-    defaults: {
-        name: 'Нет названия',
-        description: 'Нет описания',
-        slug: ''
-    }
+  var Word = Backbone.Model.extend({
+        defaults: {
+          name: 'Нет названия',
+          description: 'Нет описания',
+          slug: ''
+        }
+      });
+
+  return Word;
 });
