@@ -11,6 +11,11 @@ requirejs.config({
     views:       'site/views',
     templates:   'site/templates'
   },
+  map: {
+    "*": {
+      'underscore': 'lodash'
+    }
+  },
   shim: {
     lodash: {
       exports: '_'
@@ -25,4 +30,6 @@ requirejs.config({
   }
 });
 
-require(['jquery', 'handlebars', 'views/app', 'text!templates/wordItem.html'], function($, Handlebars, app, wordItemTmpl) {});
+require(['views/app'], function(App) {
+  var app = new App();
+});

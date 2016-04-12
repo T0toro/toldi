@@ -1,11 +1,39 @@
-define(function() {
-    'use strict';
+/**
+ * App
+ *
+ * @module       :: app
+ * @description  :: Aplication start point
+ */
 
-    var app = app || {};
+define(['backbone'], function(Backbone) {
+  'use strict';
 
-    app.test = function() {
-        alert('i call from app file');
+  /**
+   * Module variables
+   */
+
+  var App;
+
+  /**
+   * Module body
+   */
+
+  App = Backbone.View.extend({
+    el: '#home-page',
+    events: {
+      'click #btn-form-submit': 'formSubmit'
+    },
+
+    initialize: function() {
+
+    },
+
+    formSubmit: function(e) {
+      e.preventDefault();
+
+      $.get('/word');
     }
+  });
 
-    return app;
+  return App;
 });

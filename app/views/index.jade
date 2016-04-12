@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  .home-page-wrapper
+  .home-page-wrapper#home-page
     img(src="/img/logo.jpg", alt="Толковый словарь").home-page-logo
     h1 Толковый словарь
-    form#main-page-search
+    form(method="GET", action="/search", id="main-page-search")
       .form-group
-        input(type="text", class="form-control input-search")
-        button(class="btn btn-primary btn-icon ion-ios-search")
+        input(type="text", name="word", class="form-control input-search")
+        button(class="btn btn-primary btn-icon ion-ios-search", id="btn-form-submit")
     section.list-wrap
       ul.list
