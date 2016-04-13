@@ -29,23 +29,26 @@ Word     = mongoose.model('Word');
   */
 
 exports.show = function(req, res, next) {
-  var name = req.params.word || false;
+  var searchQuery = req.params.word || false;
 
-  if (name) {
+  if (searchQuery) {
+    console.info('test', searchQuery);
     Word
       .find({
-        name: name
+        name: searchQuery
       })
       .exec(function(err, word) {
         if(err) return next(err);
 
-
         if(Array.isArray(word) && word.length > 0) {
-          return res.render('words/show',{
-            word: word[0]
+          return res.json({
+            word: word
           });
         } else {
-          return next(404);
+          return res.json({
+            code: 404,
+            msg: 'Not Found'
+          });
         }
       });
   }

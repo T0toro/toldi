@@ -27,7 +27,7 @@ var fs           = require('fs')
   , connect      = function() {
     var options  = { server: { socketOptions: { keepAlive: 1 } } };
 
-    mongoose.connect('mongodb://localhost/tolmach', options);
+    mongoose.connect('mongodb://localhost/toldi', options);
   }
 
   // Open connect
