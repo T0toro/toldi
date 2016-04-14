@@ -32,7 +32,6 @@ exports.show = function(req, res, next) {
   var searchQuery = req.params.word || false;
 
   if (searchQuery) {
-    console.info('test', searchQuery);
     Word
       .find({
         name: searchQuery
@@ -41,14 +40,11 @@ exports.show = function(req, res, next) {
         if(err) return next(err);
 
         if(Array.isArray(word) && word.length > 0) {
-          return res.json({
-            word: word
+          return res.render('words/show' ,{
+            word: word[0]
           });
         } else {
-          return res.json({
-            code: 404,
-            msg: 'Not Found'
-          });
+          return res.render('static/404');
         }
       });
   }

@@ -1,3 +1,16 @@
+/*------------------------------*
+ Table of content
+ *------------------------------*
+ * # Basic
+ * # Header
+ * # content
+ * ## Home
+ * ## Words
+ * ## Not found
+ * # Forms
+ * # Buttons
+ *------------------------------*/
+
 body {
   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -6,9 +19,44 @@ a {
   color: #00B7FF;
 }
 
+.container {
+  width: 1170px;
+  margin: 15px auto;
+}
+
+// Header
+//-------------------------------------
+
 #header {
   text-align: center;
 }
+
+.home-page-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: auto;
+  margin-top: 50px;
+
+  max-width: 500px;
+  min-width: 310px;
+
+  text-align: center;
+}
+
+.logo-wrap {
+  text-align: center;
+}
+
+.site-name {
+  font: normal 42px 'Forum', Georgia, Times, serif;
+}
+
+// Header
+//-------------------------------------
 
 .form-control {
   display: block;
@@ -30,12 +78,15 @@ a {
   box-sizing: border-box;
 }
 
-.input-search {
+.form-input-search {
   display: inline-block;
   vertical-align: top;
   width: 80%;
   font-size: 20px;
 }
+
+// Buttons
+//-------------------------------------
 
 .btn {
   display: inline-block;
@@ -68,23 +119,29 @@ a {
   font-size: 24px;
 }
 
-.home-page-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  margin: auto;
-  margin-top: 50px;
-
-  max-width: 500px;
-  min-width: 310px;
-
-  text-align: center;
+.page h1 {
+  font: 24px 'Forum', Georgia, Times, serif;
+  border-bottom
 }
 
-.home-page-wrapper h1 {
+.page-not-found {
   text-align: center;
-  font: normal 42px 'Forum', Georgia, Times, serif;
+  font: 15px 'Forum', Georgia, Times, serif;
+}
+
+.page-not-found h1 {
+  margin-bottom: 0;
+  font-size: 84px;
+}
+
+.page-not-found p {
+  font-size: 24px;
+}
+
+.page-not-found hr {
+  width: 30%;
+}
+
+.block-center {
+  display: inline-block;
 }
