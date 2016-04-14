@@ -9,26 +9,25 @@
  * Module dependencies
  */
 
-var fs           = require('fs')
-  , path         = require('path')
-  , logger       = require('morgan')
-  , express      = require('express')
-  , favicon      = require('serve-favicon')
-  , mongoose     = require('mongoose')
-  , bodyParser   = require('body-parser')
-  , passport     = require('passport')
-  , cookieParser = require('cookie-parser')
+var fs           = require('fs'),
+    path         = require('path'),
+    logger       = require('morgan'),
+    express      = require('express'),
+    favicon      = require('serve-favicon'),
+    mongoose     = require('mongoose'),
+    bodyParser   = require('body-parser'),
+    passport     = require('passport'),
+    cookieParser = require('cookie-parser'),
 
-  , app          = express()
+    app          = express(),
+    options      = { server: { socketOptions: { keepAlive: 1 } } };
 
 //  Connect to mongodb
 //----------------------------------------------
 
-  , connect      = function() {
-    var options  = { server: { socketOptions: { keepAlive: 1 } } };
-
-    mongoose.connect('mongodb://localhost/toldi', options);
-  }
+    connect      = function() {
+      mongoose.connect('mongodb://localhost/toldi', options);
+    };
 
   // Open connect
   connect();

@@ -5,11 +5,11 @@
  * @description :: Represent collection of words
  */
 
-define(['backbone'], function(Backbone) {
+define(['backbone', 'models/word'], function(Backbone, Word) {
   'use strict';
 
   var Dictionary = Backbone.Collection.extend({
-        model: app.Word
+        model: Word
       });
 
   return Dictionary;

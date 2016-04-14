@@ -5,7 +5,7 @@
  * @description  :: Aplication start point
  */
 
-define(['backbone', 'models/word', 'collections/dictionary'], function(Backbone, Word, Dictionary) {
+define(['backbone', 'collections/dictionary'], function(Backbone, Dictionary) {
   'use strict';
 
   /**
@@ -27,6 +27,7 @@ define(['backbone', 'models/word', 'collections/dictionary'], function(Backbone,
 
     initialize: function() {
       this.inputSearch = this.$('.input-search');
+      console.info(this.model);
     },
 
     searchOnPress: function(e) {
