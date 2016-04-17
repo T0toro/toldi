@@ -5,7 +5,10 @@
  * @description  :: Aplication start point
  */
 
-define(['backbone', 'collections/dictionary'], function(Backbone, Dictionary) {
+define([
+  'backbone',
+  'views/dictionary'
+], function(Backbone, DictionaryView) {
   'use strict';
 
   /**
@@ -15,7 +18,7 @@ define(['backbone', 'collections/dictionary'], function(Backbone, Dictionary) {
   var App;
 
   /**
-   * Module body
+   * Module expose
    */
 
   App = Backbone.View.extend({
@@ -27,7 +30,7 @@ define(['backbone', 'collections/dictionary'], function(Backbone, Dictionary) {
 
     initialize: function() {
       this.inputSearch = this.$('.input-search');
-      console.info(this.model);
+      var dictionary = new DictionaryView();
     },
 
     searchOnPress: function(e) {

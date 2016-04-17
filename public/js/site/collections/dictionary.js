@@ -9,7 +9,8 @@ define(['backbone', 'models/word'], function(Backbone, Word) {
   'use strict';
 
   var Dictionary = Backbone.Collection.extend({
-        model: Word
+        model: Word,
+        url: '/words'
       });
 
   return Dictionary;

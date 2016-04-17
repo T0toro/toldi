@@ -25,6 +25,22 @@ Word     = mongoose.model('Word');
 
 
 /**
+ * All words
+ */
+
+exports.index = function(req, res, next) {
+  Word
+    .find()
+    .exec(function(err, words) {
+      if (err) return next(err);
+
+      res.json({
+        words: words
+      });
+    });
+}
+
+/**
   * Find word by slug
   */
 
