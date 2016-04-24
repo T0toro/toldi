@@ -28,15 +28,14 @@ Word     = mongoose.model('Word');
  * All words
  */
 
-exports.index = function(req, res, next) {
+exports.index = (req, res, next) => {
   Word
     .find()
-    .exec(function(err, words) {
+    .limit(5)
+    .exec((err, words) => {
       if (err) return next(err);
 
-      res.json({
-        words: words
-      });
+      Array.isArray(words) && !!words.length && res.json(words);
     });
 }
 
@@ -44,15 +43,15 @@ exports.index = function(req, res, next) {
   * Find word by slug
   */
 
-exports.show = function(req, res, next) {
-  var searchQuery = req.params.word || false;
+exports.show = (req, res, next) => {
+  var searchQuery = req.params.slug|| false;
 
   if (searchQuery) {
     Word
       .find({
-        name: searchQuery
+        slug: searchQuery
       })
-      .exec(function(err, word) {
+      .exec((err, word) => {
         if(err) return next(err);
 
         if(Array.isArray(word) && word.length > 0) {
@@ -63,13 +62,15 @@ exports.show = function(req, res, next) {
           return res.render('static/404');
         }
       });
+  } else {
+    return res.render('static/404');
   }
 }
 
 /**
   * Find words in a regex
   */
-exports.find = function(req, res, next) {
+exports.search = (req, res, next) => {
   var word = req.params.word || false;
 
   if (word) {
@@ -80,12 +81,10 @@ exports.find = function(req, res, next) {
           "$options": "i"
         }
       })
-      .exec(function(err, word) {
+      .exec((err, word) => {
         if(err) return next(err);
 
-        res.json({
-          word: word
-        });
+        res.json(word);
       });
   }
 }

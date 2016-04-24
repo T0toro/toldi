@@ -11,7 +11,7 @@ define(['backbone'], function(Backbone) {
   var Word = Backbone.Model.extend({
         defaults: {
           name: 'Нет названия',
-          description: 'Нет описания',
+          content: 'Нет описания',
           slug: ''
         }
       });

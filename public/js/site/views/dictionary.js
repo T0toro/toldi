@@ -23,29 +23,31 @@ define([
      */
 
     DictionaryView = Backbone.View.extend({
-        el: '.list-word',
+        tagName: 'ul',
+        className: 'list-word',
+
         initialize: function(initialWords) {
             this.collection = new Dictionary();
-            this.collection.fetch({ reset: true });
-            this.render();
 
-            this.listenTo(this.collection, 'add', this.renderWord);
-            this.listenTo(this.collection, 'reset', this.debug);
+            this.listenTo(this.collection, 'add, reset', this.render);
         },
 
-        debug: function () {
-            console.info(this.collection);
-         },
-
         render: function() {
+            var self = this;
+
+            this.$el.empty();
+
             this.collection.each(function(word) {
-                this.renderWord( word );
+                self.renderWord( word );
             }, this);
         },
 
         renderWord: function( word ) {
-            var wordView = new WordView( word );
-            this.$el.html( wordView.render().el);
+            var wordView = new WordView({
+                model: word
+            });
+
+            this.$el.append( wordView.render().el );
         }
     });
 

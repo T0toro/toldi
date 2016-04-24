@@ -8,7 +8,9 @@
 
 define([
     'backbone',
-], function(Backbone) {
+    'handlebars',
+    'text!templates/wordItem.html'
+], function(Backbone, Handlebars, wordItemTpl) {
     'use strict';
 
     /**
@@ -24,7 +26,7 @@ define([
     WordView = Backbone.View.extend({
         tagName: 'article',
         className: 'list-item',
-        initialize: function() {},
+        template: Handlebars.compile(wordItemTpl),
         render: function () {
             this.$el.html( this.template( this.model.toJSON() ));
             return this;

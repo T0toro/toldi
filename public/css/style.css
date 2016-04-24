@@ -7,9 +7,12 @@
  * ## Home
  * ## Words
  * ## Not found
+ * ## Lists
  * # Forms
  * # Buttons
- *------------------------------*/
+ *------------------------------*
+ * Basic
+/*------------------------------*/
 
 body {
   font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -24,8 +27,9 @@ a {
   margin: 15px auto;
 }
 
+/*-------------------------------*/
 /* Header
-/*-------------------------------------*/
+/*-------------------------------*/
 
 #header {
   text-align: center;
@@ -49,8 +53,31 @@ a {
   font: normal 42px 'Forum', Georgia, Times, serif;
 }
 
-/* Header
-/*-------------------------------------*/
+/*-------------------------------*/
+/* Content -- Lists
+/*-------------------------------*/
+
+.list-item article {
+  text-align: justify;
+}
+
+
+/*-------------------------------*/
+/* link
+/*-------------------------------*/
+
+.link {
+  color: #222;
+  text-decoration: none;
+}
+
+.link-more {
+  border-bottom: 1px dotted;
+}
+
+/*-------------------------------*/
+/* Form
+/*-------------------------------*/
 
 .form-group {
   position: relative;
@@ -83,8 +110,9 @@ a {
   font-size: 20px;
 }
 
+/*-------------------------------*/
 /* Buttons
-/*-------------------------------------*/
+/*-------------------------------*/
 
 .btn {
   display: inline-block;
@@ -116,6 +144,10 @@ a {
 .btn-icon {
   font-size: 24px;
 }
+
+/*-------------------------------*/
+/* Pages
+/*-------------------------------*/
 
 .page h1 {
   font: 24px 'Forum', Georgia, Times, serif;
