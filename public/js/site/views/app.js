@@ -39,10 +39,10 @@ define([
 
       !!$searchQuery && $searchQuery.length > 1 && $.get('/search/' + $searchQuery.toUpperCase())
         .done(function(data) {
+          console.info(data);
           self.dictionary.collection.reset(data);
 
           self.$('.list-word').html(self.dictionary.el);
-          console.info(self.dictionary.el);
         });
     },
 

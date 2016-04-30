@@ -77,8 +77,7 @@ exports.search = (req, res, next) => {
     Word
       .find({
         name: {
-          "$regex": word,
-          "$options": "i"
+          "$regex": new RegExp("^" + word, "i"),
         }
       })
       .exec((err, word) => {
