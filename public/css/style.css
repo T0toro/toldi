@@ -1,7 +1,6 @@
 /*------------------------------*
  Table of content
  *------------------------------*
- * # Basic
  * # Header
  * # content
  * ## Home
@@ -10,22 +9,9 @@
  * ## Lists
  * # Forms
  * # Buttons
- *------------------------------*
- * Basic
 /*------------------------------*/
 
-body {
-  font: 15px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
 
-a {
-  color: #00B7FF;
-}
-
-.container {
-  /*width: 1170px;*/
-  margin: 15px auto;
-}
 
 /*-------------------------------*/
 /* Header
@@ -114,31 +100,10 @@ a {
 /* Buttons
 /*-------------------------------*/
 
-.btn {
-  display: inline-block;
-  vertical-align: top;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-}
-
-.btn-primary {
+.btn-search {
   color: #ffffff;
   background: #000000;
+  border-radius: 0;
 }
 
 .btn-icon {
