@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /search
+
+User-agent: Yandex
+Disallow: /search
+Host: toldi.ru
+
+Sitemap: http://toldi.ru/sitemap_index.xml
