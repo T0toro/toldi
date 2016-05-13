@@ -11,10 +11,16 @@ html
   body
     #page.container
       header#header
+        nav.header-menu-top
+          ul
+            li
+              a(href="/sitemap") Карта сайта
         .logo-wrap
           a(href="/")
             img(src="/img/logo.jpg", alt="Толковый словарь", title="Толковый словарь", width="200").header-logo
           p.site-name Толковый словарь
+          hr
+          h1.page-name= pageName
       section#content
         block content
 

@@ -1,0 +1,70 @@
+extends ../layout
+
+block content
+  article.sitemap
+    section.letter-list
+      ul
+        li
+          a(href="/sitemap/а") а
+        li
+          a(href="/sitemap/б") б
+        li
+          a(href="/sitemap/в") в
+        li
+          a(href="/sitemap/г") г
+        li
+          a(href="/sitemap/д") д
+        li
+          a(href="/sitemap/е") е
+        li
+          a(href="/sitemap/ж") ж
+        li
+          a(href="/sitemap/з") з
+        li
+          a(href="/sitemap/и") и
+        li
+          a(href="/sitemap/й") й
+        li
+          a(href="/sitemap/к") к
+        li
+          a(href="/sitemap/л") л
+        li
+          a(href="/sitemap/м") м
+        li
+          a(href="/sitemap/н") н
+        li
+          a(href="/sitemap/о") о
+        li
+          a(href="/sitemap/п") п
+        li
+          a(href="/sitemap/р") р
+        li
+          a(href="/sitemap/с") с
+        li
+          a(href="/sitemap/т") т
+        li
+          a(href="/sitemap/у") у
+        li
+          a(href="/sitemap/ф") ф
+        li
+          a(href="/sitemap/х") х
+        li
+          a(href="/sitemap/ч") ч
+        li
+          a(href="/sitemap/ш") ш
+        li
+          a(href="/sitemap/щ") щ
+        li
+          a(href="/sitemap/ы") ы
+        li
+          a(href="/sitemap/э") э
+        li
+          a(href="/sitemap/ю") ю
+        li
+          a(href="/sitemap/я") я
+    section.list-word
+      if words
+        ul
+          each word in words
+            li.col-sm-3
+              a(href="/word/#{word.slug}")= word.name

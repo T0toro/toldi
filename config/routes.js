@@ -11,14 +11,23 @@ var home, words;
  */
 
 
-home  = require('../app/controllers/home');
-words = require('../app/controllers/words');
+home    = require('../app/controllers/home');
+words   = require('../app/controllers/words');
 
 
 module.exports = function(app) {
   app.get('/', home.index);
   app.get('/search/:word', words.search);
-  app.get('/word/:slug', words.show);
+
+  // Words
+  //---------------------------------------
 
   app.get('/words', words.index);
+  app.get('/word/:slug', words.show);
+
+  // Sitemap
+  //---------------------------------------
+
+  app.get('/sitemap', home.sitemap);
+  app.get('/sitemap/:letter', words.searchByLetter);
 }

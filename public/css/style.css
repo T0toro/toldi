@@ -10,14 +10,28 @@
  * # Forms
  * # Buttons
 /*------------------------------*/
+/* Basic
+/*------------------------------*/
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
 
+a {
+  text-decoration: none;
+}
 
 /*-------------------------------*/
 /* Header
 /*-------------------------------*/
 
 #header {
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -35,8 +49,40 @@
   text-align: center;
 }
 
+.logo-wrap hr {
+  width: 10%;
+  border-color: #222222;
+}
+
 .site-name {
+  font: normal 32px 'Forum', Georgia, Times, serif;
+}
+
+.page-name {
   font: normal 42px 'Forum', Georgia, Times, serif;
+}
+
+.header-menu-top {
+  text-align: left;
+}
+
+.header-menu-top ul {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.header-menu-top li {
+  display: inline-block;
+  list-style: none;
+}
+
+.header-menu-top a {
+  color: #222;
+}
+
+.header-menu-top a:hover {
+  text-decoration: none;
+  border-bottom: 1px dotted;
 }
 
 /*-------------------------------*/
@@ -52,6 +98,33 @@
   padding: 0;
 }
 
+.letter-list {
+  text-align: center;
+}
+
+.letter-list ul {
+  padding: 0;
+}
+
+.letter-list li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.letter-list li a {
+  color: #222222;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+}
+
+.sitemap .list-word {
+  margin-top: 50px;
+}
+
+.sitemap .list-word a {
+  color: #222222;
+}
 
 /*-------------------------------*/
 /* link

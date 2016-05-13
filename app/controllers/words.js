@@ -37,7 +37,7 @@ exports.index = (req, res, next) => {
 
       Array.isArray(words) && !!words.length && res.json(words);
     });
-}
+};
 
 /**
   * Find word by slug
@@ -55,7 +55,8 @@ exports.show = (req, res, next) => {
         if(err) return next(err);
 
         if(Array.isArray(word) && word.length > 0) {
-          return res.render('words/show' ,{
+          return res.render('words/show' , {
+            pageName: word[0].name,
             word: word[0]
           });
         } else {
@@ -65,13 +66,13 @@ exports.show = (req, res, next) => {
   } else {
     return res.render('static/404');
   }
-}
+};
 
 /**
   * Find words in a regex
   */
 exports.search = (req, res, next) => {
-  var word = req.params.word || false;
+  let word = req.params.word || false;
 
   if (word) {
     Word
@@ -84,6 +85,26 @@ exports.search = (req, res, next) => {
         if(err) return next(err);
 
         res.json(word);
+      });
+  }
+};
+
+exports.searchByLetter = (req, res, next) => {
+  let letter = req.params.letter || '';
+
+  if (letter) {
+    Word
+      .find({
+        name: {
+          "$regex": new RegExp("^" + letter, "i"),
+        }
+      })
+      .exec((err, words) => {
+        if (err) return next(err);
+
+        res.render('home/sitemap', {
+          words: words
+        });
       });
   }
 }

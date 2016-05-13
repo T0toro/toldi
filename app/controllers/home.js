@@ -11,6 +11,12 @@
  * Home request handler
  */
 
-exports.index = function(req, res) {
+exports.index = (req, res) => {
   res.render('index');
-}
+};
+
+exports.sitemap = (req, res) => {
+  return res.render('home/sitemap', {
+    pageName: 'Карта сайта'
+  });
+};
