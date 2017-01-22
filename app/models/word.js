@@ -5,26 +5,18 @@
  *
  * @module      :: Model
  * @description :: Contain database structure
- */
-
-/**
- * Module variables
- */
-
-var mongoose, Schema, WordSchema;
-
-/**
+ *
  * Module dependencies
  */
 
-mongoose = require('mongoose');
-Schema   = mongoose.Schema;
+const mongoose = require('mongoose'),
+      Schema   = mongoose.Schema;
 
 /**
  * Words schema
  */
 
-WordSchema = new Schema({
+const WordSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -42,10 +34,6 @@ WordSchema = new Schema({
 }, {
     timestamps: true
 });
-
-/**
- * Validations
- */
 
 /**
  * Methods
